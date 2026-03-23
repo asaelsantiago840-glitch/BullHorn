@@ -151,11 +151,34 @@ p { color: var(--text-mid); font-size: 1.05rem; line-height: 1.75; }
 .btn-gold {
   background: var(--gold-light);
   color: var(--white);
-  box-shadow: 0 4px 16px rgba(154,128,64,.35);
+  box-shadow:
+    0 4px 16px rgba(196,168,79,.45),
+    0 0 0 0 rgba(196,168,79,.5);
+  animation: gold-glow-pulse 2.5s ease-in-out infinite;
+  position: relative;
 }
 .btn-gold:hover {
   background: var(--gold);
   transform: translateY(-2px);
+  box-shadow:
+    0 6px 24px rgba(196,168,79,.65),
+    0 0 32px rgba(196,168,79,.45),
+    0 0 60px rgba(196,168,79,.2);
+  animation: none;
+}
+
+@keyframes gold-glow-pulse {
+  0%, 100% {
+    box-shadow:
+      0 4px 16px rgba(196,168,79,.45),
+      0 0 0px rgba(196,168,79,.0);
+  }
+  50% {
+    box-shadow:
+      0 4px 22px rgba(196,168,79,.65),
+      0 0 28px rgba(196,168,79,.35),
+      0 0 50px rgba(196,168,79,.15);
+  }
 }
 
 /* ================================================
