@@ -362,8 +362,32 @@ p { color: var(--text-mid); font-size: 1.05rem; line-height: 1.75; }
 .hero-pattern {
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='140' height='140' viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1'%3E%3Cellipse cx='25' cy='105' rx='8' ry='26' transform='rotate(-25,25,105)'/%3E%3Cellipse cx='75' cy='35' rx='6' ry='20' transform='rotate(20,75,35)'/%3E%3Cellipse cx='115' cy='95' rx='9' ry='24' transform='rotate(-15,115,95)'/%3E%3Cellipse cx='50' cy='70' rx='5' ry='15' transform='rotate(35,50,70)'/%3E%3Cellipse cx='100' cy='20' rx='5' ry='14' transform='rotate(-30,100,20)'/%3E%3Cpath d='M25 105 Q28 80 25 60' stroke-width='0.5'/%3E%3Cpath d='M75 35 Q78 55 75 70' stroke-width='0.5'/%3E%3Cpath d='M115 95 Q118 72 115 55' stroke-width='0.5'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='1' fill='rgba(255,255,255,0.06)'/%3E%3C/svg%3E");
   z-index: 1;
+}
+
+/* Large decorative leaf shapes in hero corners */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: -60px;
+  width: 400px; height: 400px;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='80' cy='140' rx='50' ry='130' transform='rotate(-30,80,140)' fill='rgba(74,140,92,0.12)'/%3E%3Cellipse cx='120' cy='60' rx='35' ry='90' transform='rotate(20,120,60)' fill='rgba(74,140,92,0.08)'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+  z-index: 1;
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; right: -60px;
+  width: 380px; height: 380px;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='100' cy='160' rx='45' ry='120' transform='rotate(25,100,160)' fill='rgba(196,168,79,0.10)'/%3E%3Cellipse cx='60' cy='50' rx='30' ry='80' transform='rotate(-20,60,50)' fill='rgba(74,140,92,0.09)'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -658,7 +682,27 @@ p { color: var(--text-mid); font-size: 1.05rem; line-height: 1.75; }
 .stats-bar {
   background: var(--green-dark);
   padding: 56px 0;
+  position: relative;
+  overflow: hidden;
 }
+
+.stats-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      -55deg,
+      rgba(255,255,255,.03) 0px,
+      rgba(255,255,255,.03) 1px,
+      transparent 1px,
+      transparent 28px
+    ),
+    url("data:image/svg+xml,%3Csvg width='160' height='80' viewBox='0 0 160 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='20' cy='70' rx='7' ry='22' transform='rotate(-20,20,70)' fill='rgba(255,255,255,0.04)'/%3E%3Cellipse cx='80' cy='65' rx='6' ry='18' transform='rotate(15,80,65)' fill='rgba(255,255,255,0.03)'/%3E%3Cellipse cx='140' cy='72' rx='8' ry='20' transform='rotate(-10,140,72)' fill='rgba(255,255,255,0.04)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.stats-bar .container { position: relative; z-index: 1; }
 
 .stats-grid {
   display: grid;
@@ -1080,6 +1124,22 @@ p { color: var(--text-mid); font-size: 1.05rem; line-height: 1.75; }
   padding: 90px 0;
   position: relative;
   overflow: hidden;
+}
+
+.cta-banner-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='180' height='160' viewBox='0 0 180 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='1'%3E%3Cellipse cx='30' cy='130' rx='10' ry='32' transform='rotate(-25,30,130)'/%3E%3Cellipse cx='90' cy='120' rx='8' ry='26' transform='rotate(15,90,120)'/%3E%3Cellipse cx='150' cy='135' rx='10' ry='30' transform='rotate(-10,150,135)'/%3E%3Cellipse cx='60' cy='40' rx='7' ry='22' transform='rotate(30,60,40)'/%3E%3Cellipse cx='130' cy='30' rx='6' ry='18' transform='rotate(-20,130,30)'/%3E%3Cpath d='M30 130 Q32 100 30 75' stroke-width='0.6'/%3E%3Cpath d='M90 120 Q93 95 90 72' stroke-width='0.6'/%3E%3Cpath d='M150 135 Q153 105 150 82' stroke-width='0.6'/%3E%3C/g%3E%3C/svg%3E"),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,.02) 0px,
+      rgba(255,255,255,.02) 1px,
+      transparent 1px,
+      transparent 32px
+    );
+  pointer-events: none;
+  z-index: 0;
 }
 
 .cta-banner::before {
