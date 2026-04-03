@@ -326,7 +326,8 @@ p { color: var(--text-mid); font-size: 1.05rem; line-height: 1.75; }
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: var(--dark);
+  background:
+    url('brand_assets/IMG_5289.png') center center / cover no-repeat;
 }
 
 .hero-bg {
