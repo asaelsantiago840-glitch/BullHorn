@@ -100,7 +100,16 @@ if (form) {
 
     try {
       const formData = new FormData(form);
-      const object = Object.fromEntries(formData);
+      const object = {
+        access_key: '50e3f328-100b-43f1-93f0-3551c235642c',
+        subject: 'New Quote Request — Bull Horn Landscaping',
+        from_name: 'Bull Horn Website',
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        service: formData.get('service'),
+        message: formData.get('message')
+      };
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
