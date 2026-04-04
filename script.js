@@ -99,12 +99,15 @@ if (form) {
     btn.disabled = true;
 
     try {
-      const data = new FormData(form);
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: data
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(object)
       });
       const json = await res.json();
+      console.log('Web3Forms response:', json);
 
       if (json.success) {
         btn.innerHTML = '✅ Message Sent! We\'ll be in touch soon.';
@@ -116,9 +119,11 @@ if (form) {
           btn.disabled = false;
         }, 5000);
       } else {
-        throw new Error('Submission failed');
+        console.error('Web3Forms error:', json.message);
+        throw new Error(json.message);
       }
-    } catch {
+    } catch (err) {
+      console.error('Submit error:', err);
       btn.innerHTML = '❌ Something went wrong. Please call us directly.';
       btn.style.background = '#c0392b';
       setTimeout(() => {
