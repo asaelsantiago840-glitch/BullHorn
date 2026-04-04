@@ -578,7 +578,10 @@
 
           <!-- Form -->
           <div class="contact-form reveal reveal-delay-2">
-            <form novalidate>
+            <form id="contact-form" novalidate>
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+              <input type="hidden" name="subject" value="New Quote Request — Bull Horn Landscaping" />
+              <input type="hidden" name="from_name" value="Bull Horn Website" />
               <div class="form-grid">
                 <div class="form-group">
                   <label for="name">Full Name</label>
