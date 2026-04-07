@@ -87,6 +87,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+/* ---------- Gallery drag-to-scroll ---------- */
+const gallery = document.querySelector('.gallery-grid');
+if (gallery) {
+  let isDown = false, startX, scrollLeft;
+
+  gallery.addEventListener('mousedown', (e) => {
+    isDown = true;
+    gallery.classList.add('dragging');
+    startX = e.pageX - gallery.offsetLeft;
+    scrollLeft = gallery.scrollLeft;
+  });
+  gallery.addEventListener('mouseleave', () => { isDown = false; gallery.classList.remove('dragging'); });
+  gallery.addEventListener('mouseup',    () => { isDown = false; gallery.classList.remove('dragging'); });
+  gallery.addEventListener('mousemove',  (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - gallery.offsetLeft;
+    gallery.scrollLeft = scrollLeft - (x - startX) * 1.5;
+  });
+}
+
 /* ---------- Contact form ---------- */
 const form = document.querySelector('#contact-form');
 if (form) {
