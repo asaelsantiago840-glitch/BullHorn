@@ -989,13 +989,14 @@ p { color: var(--text-mid); font-size: 1.05rem; line-height: 1.75; }
   border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
-  flex: 0 0 420px;
-  height: 520px;
+  flex: 0 0 320px;
+  height: 380px;
   scroll-snap-align: start;
 }
 
 .gallery-item--featured {
-  flex: 0 0 560px;
+  flex: 0 0 420px;
+  height: 380px;
 }
 
 .gallery-item img {
