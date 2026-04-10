@@ -966,13 +966,13 @@ p { color: var(--text-mid); font-size: 1.05rem; line-height: 1.75; }
   justify-content: center;
   gap: 8px;
   margin-bottom: 1rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(0,0,0,0.6);
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 .gallery-scroll-hint svg {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .gallery-grid {
