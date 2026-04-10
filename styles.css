@@ -270,6 +270,16 @@ p { color: var(--text-mid); font-size: 1.05rem; line-height: 1.75; }
 
 .nav-cta { margin-left: 0.5rem; }
 
+.nav-instagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.7);
+  transition: var(--transition);
+  margin-left: 0.25rem;
+}
+.nav-instagram:hover { color: var(--white); }
+
 /* Hamburger */
 .hamburger {
   display: none;
@@ -1480,7 +1490,7 @@ p { color: var(--text-mid); font-size: 1.05rem; line-height: 1.75; }
 }
 
 @media (max-width: 768px) {
-  .nav-links, .nav-cta { display: none; }
+  .nav-links, .nav-cta, .nav-instagram { display: none; }
   .hamburger { display: flex; }
   .nav-mobile { display: flex; }
 
